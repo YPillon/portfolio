@@ -1,10 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@1,500&family=Mada&display=swap");
 html {
-  font-size: 100%;
+  font-size: 125%;
+}
+
+body {
+  margin: 0;
+  font-family: "Mada", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  font-family: "Crimson Pro", serif;
+  text-transform: capitalize;
+}
+
+h1 {
+  padding: 150px 0 60px;
+  margin: 0;
+}
+
+h2 {
+  margin-bottom: 40px;
+  font-family: "Mada", sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+}
+
+h3 {
+  font-family: "Crimson Pro", serif;
+  font-size: 2.5rem;
+  font-weight: normal;
+  text-transform: capitalize;
+  margin: 0 0 1rem;
+}
+
+h4 {
+  font-family: "Crimson Pro", serif;
+  font-weight: normal;
+  font-size: 1.5rem;
+  margin: 1rem 0 -0.5rem;
+}
+
+p {
+  line-height: 1.55;
+}
+
+.visually-hidden {
+  display: none;
+}
+
+header {
+  padding: 200px 0 120px;
 }
 
 nav ul {
+  background-color: yellowgreen;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 10% 10px 25%;
+  margin: 0;
   display: flex;
-  list-style-type: none;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+nav ul li a {
+  font-weight: 600;
+  font-size: 1.3rem;
+  text-transform: lowercase;
+  letter-spacing: 0.07rem;
+  display: inline-block;
+  padding: 15px 50px 10px;
+}
+
+section {
+  padding: 50px 0;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 0 0;
+  padding: 0 8%;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+.container-img-profile {
+  object-fit: contain;
+  width: 30%;
+  max-width: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: 20px;
+}
+.container-img-profile img {
+  width: 100%;
+  display: block;
+}
+.container-text {
+  width: 50%;
+  width: 70%;
+  padding-left: 5%;
+}
+
+.container-icons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box-icon {
+  width: 11.1%;
+  text-align: center;
+}
+.box-icon i {
+  font-size: 3.5rem;
+  text-align: center;
+}
+.box-icon img {
+  height: 70px;
+}
+.box-icon img + p {
+  margin-top: 13px;
 }
 
 /*# sourceMappingURL=style.css.map */

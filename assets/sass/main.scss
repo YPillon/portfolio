@@ -1,8 +1,5 @@
-html {
-    font-size: 100%;
-}
-
-nav ul {
-    display: flex;
-    list-style-type: none;
-}
+@import "./base/base";
+@import "./components/components";
+@import "./layouts/layouts";
+@import "./utils/keyframes";
+@import "./utils/variables";

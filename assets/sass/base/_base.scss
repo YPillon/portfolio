@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@1,500&family=Mada&display=swap");
+
+html {
+  font-size: 125%;
+}
+
+body {
+  margin: 0;
+  font-family: "Mada", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  font-family: "Crimson Pro", serif;
+  text-transform: capitalize;
+}
+
+h1 {
+  padding: 150px 0 60px;
+  margin: 0;
+}
+
+h2 {
+  margin-bottom: 40px;
+  font-family: "Mada", sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+}
+
+h3 {
+  font-family: "Crimson Pro", serif;
+  font-size: 2.5rem;
+  font-weight: normal;
+  text-transform: capitalize;
+  margin: 0 0 1rem;
+}
+
+h4 {
+  font-family: "Crimson Pro", serif;
+  font-weight: normal;
+  font-size: 1.5rem;
+  margin: 1rem 0 -0.5rem;
+}
+
+p {
+  line-height: 1.55;
+}
