@@ -18,8 +18,11 @@ ul {
 
 a {
   text-decoration: none;
+  color: #252525;
   font-family: "Crimson Pro", serif;
   text-transform: capitalize;
+  font-size: 1.1rem;
+  letter-spacing: 0.01rem;
 }
 
 h1 {
@@ -56,6 +59,15 @@ p {
 
 .visually-hidden {
   display: none;
+}
+
+.btn {
+  background-color: #6c6cdf;
+  padding: 0.5rem 1.5rem;
+  display: inline-block;
+}
+.btn:first-child {
+  margin-right: 5px;
 }
 
 header {
@@ -121,19 +133,56 @@ section {
   flex-wrap: wrap;
 }
 
-.box-icon {
+.skills .box-icon {
   width: 11.1%;
   text-align: center;
 }
-.box-icon i {
+.skills .box-icon i {
   font-size: 3.5rem;
   text-align: center;
 }
-.box-icon img {
+.skills .box-icon img {
   height: 70px;
 }
-.box-icon img + p {
+.skills .box-icon img + p {
   margin-top: 13px;
+}
+
+.work {
+  background: #b9b8b8;
+}
+.work .container-work {
+  display: flex;
+  margin-bottom: 75px;
+}
+.work .container-work:nth-child(odd) .container-text {
+  order: -1;
+  padding-left: 0;
+  padding-right: 5%;
+}
+.work .container-img {
+  width: 55%;
+  padding-top: 35px;
+}
+.work .container-img img {
+  width: 100%;
+  border-radius: 10px;
+}
+.work .container-text {
+  width: 45%;
+}
+.work .container-icons-mini {
+  display: flex;
+  margin-bottom: 1rem;
+}
+.work .container-icons-mini .box-icon {
+  margin-right: 8px;
+}
+.work .container-icons-mini .box-icon i {
+  font-size: 1.3rem;
+}
+.work .container-icons-mini .box-icon img {
+  height: 26px;
 }
 
 /*# sourceMappingURL=style.css.map */

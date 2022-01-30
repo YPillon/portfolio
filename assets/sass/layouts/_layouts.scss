@@ -67,7 +67,7 @@ section {
   flex-wrap: wrap;
 }
 
-.box-icon {
+.skills .box-icon {
   width: 11.1%;
   text-align: center;
   & i {
@@ -78,6 +78,45 @@ section {
     height: 70px;
     & + p {
       margin-top: 13px;
+    }
+  }
+}
+
+.work {
+  background: rgb(185, 184, 184);
+  & .container {
+    &-work {
+      display: flex;
+      margin-bottom: 75px;
+      &:nth-child(odd) .container-text {
+        order: -1;
+        padding-left: 0;
+        padding-right: 5%;
+      }
+    }
+    &-img {
+      width: 55%;
+      padding-top: 35px;
+      & img {
+        width: 100%;
+        border-radius: 10px;
+      }
+    }
+    &-text {
+      width: 45%;
+    }
+    &-icons-mini {
+      display: flex;
+      margin-bottom: 1rem;
+      & .box-icon {
+        margin-right: 8px;
+        & i {
+          font-size: 1.3rem;
+        }
+        & img {
+          height: 26px;
+        }
+      }
     }
   }
 }
