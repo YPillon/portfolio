@@ -8,8 +8,5 @@
     "sass": "sass --watch ./assets/sass/main.scss:./assets/css/style.css"
   },
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.4"
-  }
+  "license": "ISC"
 }

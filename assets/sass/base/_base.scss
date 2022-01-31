@@ -7,10 +7,18 @@ html {
 body {
   margin: 0;
   font-family: "Mada", sans-serif;
+  color: $font-main-color;
 }
 
 * {
   box-sizing: border-box;
+}
+
+.wrapper {
+  //max-width: 1280px;
+  width: 100%;
+  margin: 0 0 0;
+  padding: 0 8%;
 }
 
 ul {
@@ -19,7 +27,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: #252525;
+  color: $font-main-color;
   font-family: "Crimson Pro", serif;
   text-transform: capitalize;
   font-size: 1.1rem;
@@ -56,4 +64,14 @@ h4 {
 
 p {
   line-height: 1.55;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  &:required:invalid {
+    box-shadow: 2px 2px $color-invalid;
+  }
 }
