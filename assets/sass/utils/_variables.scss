@@ -1,3 +1,15 @@
+$color-1: rgba(244, 172, 64);
+$color-2: rgba(234, 89, 42);
+$color-3: rgba(0, 61, 123, 0.97);
+$color-4: #003e7bab;
+$color-5: rgba(245, 190, 219);
+$color-6: #f4ac4073;
+$color-7: #ea592a94;
+
 $font-main-color: #252525;
 $color-invalid: rgb(228, 97, 97);
 $label-color: #727272;
+
+.light {
+  color: $color-1;
+}
