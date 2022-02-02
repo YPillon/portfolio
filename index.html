@@ -17,24 +17,27 @@
             <div class="wrapper">
                 <nav>
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#skills">Skills</a></li>
-                        <li><a href="#work">Work</a></li>
-                        <li><a href="#contact">Contact</a></li>
-
+                        <li><a href="#home" aria-label="go to home section">Home</a></li>
+                        <li><a href="#about" aria-label="go to about section">About</a></li>
+                        <li><a href="#skills" aria-label="go to skills section">Skills</a></li>
+                        <li><a href="#work" aria-label="go to work section">Work</a></li>
+                        <li><a href="#contact" aria-label="go to contact section">Contact</a></li>
                     </ul>
                 </nav>
 
                 <h1>
-                    <span>Hi! I'm Younes 👋</span>
+                    <span>Hi, I'm Younes! 👋</span>
                     I'm a young
                     <span class="title">Web Developper</span>
                     and
-                    <span class="flip">very good surfer</span>.
+                    <span class="flip">surfer 🏄‍♂️</span>.
                 </h1>
 
             </div>
+
+            <div class="movingSquare"></div>
+            <div class="movingSquare"></div>
+            <div class="movingSquare"></div>
         </header>
 
         <main>
@@ -50,10 +53,24 @@
                         </div>
                         <div class="container-text">
                             <h4>A young web developper eager to learn.</h4>
-                            <p>Passionné de programmation, ouvert d'esprit, ayant le souci du détail et une grande
-                                capacité d'adaptation, je serai ravi de mettre mes compétences à votre service.</p>
+                            <p>Passionnate about programming and open-minded, I code with a sharp attention to detail.
+                                Good user experience is my motto. I write clean and reusable code so people interested
+                                in my work can reuse it as they wish! I use full Javascript to create my projects.</p>
+
+                            <p>I have a <span class="bold">Web Developper Certificate</span> from <a
+                                    href="https://openclassrooms.com/" target="_blank"
+                                    aria-label="Open link to Openclassrooms homepage.">Openclassrooms</a> and am
+                                currently based in
+                                Strasbourg, France 🇫🇷
+                                I fell in love with programming recently, and since then I code intensively to master
+                                HTML, CSS and back-and-front Javascript.</p>
+
+                            <p>I love to learn and I enjoy new challenges! So if you speak French, English, German or
+                                Spanish, feel free to contact me! And if the feeling is good, we might build someting
+                                together 😉</p>
+
                             <div class="container-text-link">
-                                <a href="#contact">get in touch!</a>
+                                <a class="u-line" href="#contact" aria-label="Go to contact section.">get in touch!</a>
                             </div>
                         </div>
                     </div>
@@ -63,8 +80,8 @@
             <!----- SKILLS SECTION ----->
             <section class="skills" id="skills">
                 <div class="wrapper">
-                    <h2 class="light">skills & tools</h2>
-                    <h3>My Toolbox & Things I Can Do</h3>
+                    <h2 class="light">skills</h2>
+                    <h3>an overview of what i can do</h3>
                     <p>The skills and tools I use to bring your projects to life:</p>
                     <div class="container-icons">
                         <div class="box-icon">
@@ -138,7 +155,7 @@
                         </div>
                     </div> <!-- ./container-icons -->
 
-                    <h4>Currently working on:</h4>
+                    <h4 class="light">Currently working on:</h4>
                     <p>Improving my skills in Vue.js, and playing around with CSS.</p>
                 </div> <!-- ./wrapper -->
             </section> <!-- ./skills -->
@@ -157,9 +174,10 @@
                         </div>
                         <div class="container-text">
                             <h4>Groupomania</h4>
-                            <p>Groupomania is an enterprise social network inspired by 9gag where employees can post
-                                images and
-                                comments them.</p>
+                            <p>An enterprise social network inspired by 9gag where employees can create an account, post
+                                images and comment their colleagues’ posts.
+                                I coded it from A to Z, from the database and the API to the frontend app with Vue.js.
+                            </p>
                             <div class="container-icons-mini">
                                 <div class="box-icon">
                                     <i class="fab fa-html5" aria-hidden="true"></i>
@@ -207,7 +225,8 @@
                         <div class="container-text">
                             <h4>Kanap</h4>
                             <p>Kanap is an e-commerce website where you will find the perfect sofa to match your home
-                                decoration !</p>
+                                decoration !
+                                I coded the entire Javascript frontend part to connect to the API.</p>
                             <div class="container-icons-mini">
                                 <div class="box-icon">
                                     <i class="fab fa-js-square" aria-hidden="true"></i>
@@ -232,10 +251,8 @@
                         </div>
                         <div class="container-text">
                             <h4>Ohmyfood</h4>
-                            <p>Ohmyfood is a reservation platform for Gastronomic restaurants in Paris, made for people
-                                who love good food but don't have much time to wait for ordering and cooking. They can
-                                choose on the platform their menu and the time when they want to eat, then order and
-                                comme on time to eat their meal.</p>
+                            <p>Ohmyfood is a reservation platform for gourmet restaurants in Paris.
+                                I made a static frontend integration using Sass, and I also added nice animations.</p>
                             <div class="container-icons-mini">
                                 <div class="box-icon">
                                     <i class="fab fa-html5" aria-hidden="true"></i>
@@ -267,8 +284,8 @@
                         </div>
                         <div class="container-text">
                             <h4>Reservia</h4>
-                            <p>This project comprises the static integration of Reservia's website frontend. Reservia is
-                                a platform aiming to help travelers booking a hotel and activities.
+                            <p>This project comprises the static integration of Reservia's website frontend, pixel by
+                                pixel. Reservia is a platform aiming to help travelers booking hotels and activities.
                             </p>
                             <div class="container-icons-mini">
                                 <div class="box-icon">
@@ -299,24 +316,23 @@
                     <h3>get in touch</h3>
                     <div class="container-content">
                         <div class="container-form">
-                            <p>Dropping a line to say g’day, ask for my resume or see if we can build something amazing
-                                together? I’d love to hear from you!</p>
+                            <p>Dropping a line to say hi, ask for my resume or see if we can work together? Easy!</p>
                             <p>Fill in your info in the form below and I look forward to hearing from you!
                             </p>
                             <form action="https://formspree.io/f/xrgjpzel" method="POST" />
                             <div class="field">
                                 <input type="text" name="name" id="name" required="required"
-                                    placeholder="Tim Berners-Lee">
+                                    placeholder="How should I call you?">
                                 <label for="name">Name<span class="required">*</span></label>
                             </div>
                             <div class="field">
                                 <input type="email" name="_replyto" id="email" required="required"
-                                    placeholder="i_invented_the@internet.com">
+                                    placeholder="your@email.com">
                                 <label for="email">Email<span class="required">*</span></label>
                             </div>
                             <div class="field">
                                 <textarea type="textbox" name="message" id="message" required="required"
-                                    placeholder="Dear Annie, I'm a big fan of squirrels as well."></textarea>
+                                    placeholder="Dear Younes, I'm fond of surfing as well."></textarea>
                                 <label for="message" class="message">Message<span class="required">*</span></label>
                             </div>
                             <button class="btn" value="send">
@@ -330,13 +346,15 @@
                             <div class="container-social-i">
                                 <ul>
                                     <li>
-                                        <a href="https://www.linkedin.com/in/younes-pillon" target="_blank" aria-label="Open link to Younes Pillon's LinkedIn page.">
+                                        <a href="https://www.linkedin.com/in/younes-pillon" target="_blank"
+                                            aria-label="Open link to Younes Pillon's LinkedIn page.">
                                             <i class="fab fa-linkedin" aria-hidden="true"></i>
                                             <span class="visually-hidden">LinkedIn</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://github.com/YPillon" target="_blank" aria-label="Open link to Younes Pillon's Github page.">
+                                        <a href="https://github.com/YPillon" target="_blank"
+                                            aria-label="Open link to Younes Pillon's Github page.">
                                             <i class="fab fa-github" aria-hidden="true"></i>
                                             <span class="visually-hidden">Github</span>
                                         </a>
@@ -344,7 +362,7 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div> <!-- ./container-form -->
                 </div> <!-- ./wrapper -->
             </section> <!-- ./contact -->
         </main>

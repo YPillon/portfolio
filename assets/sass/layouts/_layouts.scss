@@ -1,5 +1,7 @@
-header {
+header.home {
+  background: $color-7;
   padding: 200px 0 120px;
+  position: relative;
   & h1 {
     max-width: 860px;
     & span {
@@ -12,55 +14,71 @@ header {
       }
     }
   }
-}
+  nav {
+    & ul {
+      background-color: $color-3;
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      width: 100%;
 
-nav {
-  & ul {
-    background-color: $color-3;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    width: 100%;
+      padding: 10px 10% 10px 15%;
+      margin: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
 
-    padding: 10px 10% 10px 15%;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-
-    & li {
-      position: relative;
-      &::after {
-        position: absolute;
-        left: 20%;
-        top: 2.4rem;
-        content: "";
-        width: 60%;
-        height: 5px;
-        background: $color-5;
-        transform: scaleX(0);
-        transform-origin: center;
-        transition: transform 0.4s ease-in-out;
-      }
-      &:hover::after {
-        transform: scaleX(1);
-      }
-      & a {
-        color: white;
-        font-weight: 600;
-        font-size: 1.3rem;
-        text-transform: lowercase;
-        letter-spacing: 0.07rem;
-        display: inline-block;
-        padding: 15px 50px;
+      & li {
+        position: relative;
+        &::after {
+          position: absolute;
+          left: 20%;
+          top: 2.4rem;
+          content: "";
+          width: 60%;
+          height: 5px;
+          background: $color-5;
+          transform: scaleX(0);
+          transform-origin: center;
+          transition: transform 0.4s ease-in-out;
+        }
+        &:hover::after {
+          transform: scaleX(1);
+        }
+        & a {
+          color: white;
+          font-weight: 600;
+          font-size: 1.3rem;
+          text-transform: lowercase;
+          letter-spacing: 0.07rem;
+          display: inline-block;
+          padding: 15px 50px;
+        }
       }
     }
   }
-}
-
-.home {
-  background: $color-1;
+  /*& .movingSquare {
+    &::after {
+      content: "";
+      background: repeating-linear-gradient(to right, $color-5 25%, white 50%);
+      border: 2px solid $font-main-color;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      right: 100px;
+      top: 200px;
+      animation-name: rotation, upAndDown;
+      animation-duration: 3s;
+    }
+    &:nth-child(2)::after {
+      right: 170px;
+    }
+    &:nth-child(3)::after {
+      right: 240px;
+    }
+  }*/
 }
 
 .about {
@@ -68,29 +86,55 @@ nav {
   & .container {
     display: flex;
     width: 100%;
+    align-items: flex-start;
     &-img-profile {
-      object-fit: contain;
       width: 30%;
       max-width: 300px;
       border-radius: 50%;
       overflow: hidden;
-      margin-top: 20px;
+      margin-top: 1.5rem;
 
       & img {
         width: 100%;
         display: block;
       }
     }
+    &-text {
+      &-link {
+        display: inline-block;
+      }
+      a {
+        transition: all 0.2s ease-in-out;
+        &.u-line::after {
+          content: "";
+          display: block;
+          height: 3px;
+          width: 100%;
+          background: $color-3;
+        }
+        &:hover {
+          background: $color-3;
+          color: white;
+        }
+      }
+      & p a {
+        color: $color-3;
+        font-family: "Mada", sans-serif;
+      }
+    }
   }
 }
 
-.container-icons {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .skills {
+  & h3 + p {
+    margin-bottom: 2rem;
+  }
   background: $color-4;
+  & .container-icons {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
   & .box-icon {
     width: 11.1%;
     text-align: center;
@@ -112,10 +156,13 @@ nav {
 
 .work {
   background: $color-6;
+  & h3 {
+    width: 45%;
+  }
   & .container {
     &-work {
       display: flex;
-      margin-bottom: 75px;
+      margin-bottom: 30px;
       &:nth-child(odd) .container-text {
         order: -1;
         padding-left: 0;
@@ -150,6 +197,7 @@ nav {
 }
 
 .contact {
+  background: $color-5;
   & .container {
     &-content {
       display: flex;
@@ -157,6 +205,55 @@ nav {
     }
     &-form {
       width: 64%;
+      & form {
+        & label {
+          pointer-events: none;
+          display: block;
+          transform: translateY(-46px);
+          padding-left: 13px;
+          margin-bottom: 0;
+          color: $label-color;
+          transition: all 0.2s ease;
+          &.message {
+            transform: translateY(-142px);
+          }
+          & .required {
+            color: $color-invalid;
+          }
+        }
+        & input,
+        textarea {
+          border-radius: 0;
+          padding: 1.6rem 0.6rem 0.4rem;
+          border: 2px solid $color-5;
+          &::placeholder {
+            color: white;
+            font-size: 1rem;
+          }
+          &:required:valid,
+          &:focus {
+            & + label {
+              color: $color-1;
+              font-size: 0.7rem;
+              transform: translateY(-56px);
+              margin-bottom: 7px;
+              &.message {
+                transform: translateY(-144px);
+              }
+            }
+          }
+          &:focus {
+            border: 2px solid $color-3;
+            &::placeholder {
+              color: $font-main-color;
+            }
+          }
+        }
+        & textarea {
+          resize: none;
+          height: 150px;
+        }
+      }
     }
     &-social {
       width: 35%;
@@ -183,56 +280,6 @@ nav {
           }
         }
       }
-    }
-  }
-}
-
-.contact {
-  background: $color-5;
-  & form {
-    & label {
-      pointer-events: none;
-      display: block;
-      transform: translateY(-46px);
-      padding-left: 13px;
-      margin-bottom: 0;
-      color: $label-color;
-      transition: all 0.2s ease;
-      &.message {
-        transform: translateY(-142px);
-      }
-      & .required {
-        color: $color-invalid;
-      }
-    }
-    & input,
-    textarea {
-      border-radius: 0;
-      padding: 1.6rem 0.6rem 0.4rem;
-      border: 2px solid $color-5;
-      &::placeholder {
-        color: white;
-        font-size: 1rem;
-      }
-      &:required:valid,
-      &:focus {
-        & + label {
-          color: $color-1;
-          font-size: 0.7rem;
-          transform: translateY(-56px);
-          margin-bottom: 7px;
-          &.message {
-            transform: translateY(-144px);
-          }
-        }
-      }
-      &:focus {
-        border: 2px solid $color-3;
-      }
-    }
-    & textarea {
-      resize: none;
-      height: 150px;
     }
   }
 }
