@@ -8,7 +8,7 @@
     transform: translateY(0);
   }
   100% {
-    transform: translateY(200px);
+    transform: translateY(300px);
   }
 }
 @keyframes rotation {
@@ -17,6 +17,33 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+@keyframes rotateWords {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  30% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
   }
 }
 html {
@@ -66,14 +93,14 @@ a {
 }
 
 h1 {
-  padding: 150px 0 60px;
+  padding: 140px 0;
   margin: 0;
   color: white;
   font-size: 3rem;
 }
 
 h2 {
-  color: #ea592a;
+  color: #1fbfb8;
   margin-bottom: 40px;
   font-family: "Mada", sans-serif;
   font-weight: normal;
@@ -115,6 +142,10 @@ textarea {
 input:required:invalid,
 textarea:required:invalid {
   box-shadow: 2px 2px #e46161;
+}
+
+input[type=checkbox] {
+  display: none;
 }
 
 i {
@@ -164,30 +195,9 @@ i {
 }
 
 header.home {
-  background: #ea592ad6;
+  background: #1fbfb8;
   padding: 200px 0 120px;
   position: relative;
-  /*& .movingSquare {
-    &::after {
-      content: "";
-      background: repeating-linear-gradient(to right, $color-5 25%, white 50%);
-      border: 2px solid $font-main-color;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      position: absolute;
-      right: 100px;
-      top: 200px;
-      animation-name: rotation, upAndDown;
-      animation-duration: 3s;
-    }
-    &:nth-child(2)::after {
-      right: 170px;
-    }
-    &:nth-child(3)::after {
-      right: 240px;
-    }
-  }*/
 }
 header.home h1 {
   max-width: 860px;
@@ -201,23 +211,68 @@ header.home h1 span:first-child {
 header.home h1 span.title {
   font-style: oblique;
 }
+header.home h1 .slidingVertical {
+  display: inline;
+}
+header.home h1 .slidingVertical span {
+  animation: rotateWords 10s linear infinite;
+  position: absolute;
+  overflow: hidden;
+  opacity: 0;
+  white-space: nowrap;
+  margin-left: 10px;
+}
+header.home h1 .slidingVertical span:nth-child(2) {
+  animation-delay: 2.5s;
+}
+header.home h1 .slidingVertical span:nth-child(3) {
+  animation-delay: 5s;
+}
+header.home h1 .slidingVertical span:nth-child(4) {
+  animation-delay: 7.5s;
+}
 header.home nav ul {
   background-color: rgba(0, 61, 123, 0.97);
   position: fixed;
+  z-index: 2;
   top: 0;
   right: 0;
   left: 0;
   width: 100%;
+  height: 80px;
   padding: 10px 10% 10px 15%;
   margin: 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  transition: 0.5s ease-in-out;
+}
+@media (max-width: 1024px) {
+  header.home nav ul {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
 }
 header.home nav ul li {
+  transition: 0.5s linear;
+}
+@media (max-width: 1024px) {
+  header.home nav ul li {
+    text-align: center;
+    transform: translateY(-300px);
+  }
+}
+header.home nav ul li a {
+  color: white;
+  font-weight: 600;
+  font-size: 1.3rem;
+  text-transform: lowercase;
+  letter-spacing: 0.07rem;
+  display: inline-block;
+  padding: 15px 50px;
   position: relative;
 }
-header.home nav ul li::after {
+header.home nav ul li a::after {
   position: absolute;
   left: 20%;
   top: 2.4rem;
@@ -229,17 +284,88 @@ header.home nav ul li::after {
   transform-origin: center;
   transition: transform 0.4s ease-in-out;
 }
-header.home nav ul li:hover::after {
+header.home nav ul li a:hover::after {
   transform: scaleX(1);
 }
-header.home nav ul li a {
-  color: white;
-  font-weight: 600;
-  font-size: 1.3rem;
-  text-transform: lowercase;
-  letter-spacing: 0.07rem;
-  display: inline-block;
-  padding: 15px 50px;
+@media (max-width: 1024px) {
+  header.home nav input:checked ~ ul {
+    height: 100%;
+  }
+  header.home nav input:checked ~ ul li {
+    transform: translateY(0);
+  }
+  header.home nav input:checked + label span {
+    opacity: 0;
+    top: 50%;
+  }
+  header.home nav input:checked + label span:first-child {
+    opacity: 1;
+    transform: rotate(405deg);
+  }
+  header.home nav input:checked + label span:last-child {
+    opacity: 1;
+    transform: rotate(-405deg);
+  }
+  header.home nav label {
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    height: 50px;
+    width: 50px;
+    z-index: 999;
+    display: block;
+  }
+  header.home nav label span {
+    position: absolute;
+    top: 19px;
+    right: 4px;
+    width: 40px;
+    height: 5px;
+    border-radius: 4px;
+    display: block;
+    background-color: #fff;
+    transition: 0.5s;
+  }
+  header.home nav label span:first-child {
+    top: 6px;
+  }
+  header.home nav label span:last-child {
+    top: 32px;
+  }
+}
+@media (min-width: 1025px) {
+  header.home .animationHome {
+    position: relative;
+    top: -500px;
+    right: 3%;
+  }
+  header.home .animationHome .movingCircle {
+    animation: upAndDown 3s linear infinite alternate;
+  }
+  header.home .animationHome .movingCircle .rotatingCircle::after {
+    animation: rotation 4.5s ease infinite;
+    content: "";
+    background: repeating-linear-gradient(to right, #f5bedb 80%, white 90%);
+    border: 2px solid #252525;
+    border-radius: 50%;
+    position: absolute;
+    right: 10%;
+    width: 50px;
+    height: 50px;
+  }
+  header.home .animationHome .movingCircle:nth-child(2) {
+    animation-duration: 5.5s;
+  }
+  header.home .animationHome .movingCircle:nth-child(2) .rotatingCircle::after {
+    right: 15%;
+  }
+  header.home .animationHome .movingCircle:nth-child(3) {
+    animation-duration: 6.5s;
+  }
+  header.home .animationHome .movingCircle:nth-child(3) .rotatingCircle::after {
+    right: 20%;
+  }
 }
 
 .about {

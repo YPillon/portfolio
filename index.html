@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale= 0.86, maximum-scale=5.0, minimum-scale= 0.86">
+    <meta name="viewport" content="width=device-width, initial-scale= 1.0, maximum-scale=5.0, minimum-scale= 1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
@@ -15,8 +15,17 @@
     <div class="content">
         <header class="home" id="home">
             <div class="wrapper">
+
+
                 <nav>
-                    <ul>
+                    <input type="checkbox" id="hamburger" name="hamburger" />
+                    <label for="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+
+                    <ul id="navLinks">
                         <li><a href="#home" aria-label="go to home section">Home</a></li>
                         <li><a href="#about" aria-label="go to about section">About</a></li>
                         <li><a href="#skills" aria-label="go to skills section">Skills</a></li>
@@ -30,14 +39,27 @@
                     I'm a young
                     <span class="title">Web Developper</span>
                     and
-                    <span class="flip">surfer 🏄‍♂️</span>.
+                    <div class="slidingVertical">
+                        <span>polyglot.</span>
+                        <span>surfer. 🏄‍♂️</span>
+                        <span>creative. 🧠</span>
+                        <span>thai boxer. 🥊</span>
+                    </div>
                 </h1>
 
             </div>
+            <div class="animationHome">
+                <div class="movingCircle">
+                    <div class="rotatingCircle"></div>
+                </div>
+                <div class="movingCircle">
+                    <div class="rotatingCircle"></div>
+                </div>
+                <div class="movingCircle">
+                    <div class="rotatingCircle"></div>
+                </div>
+            </div>
 
-            <div class="movingSquare"></div>
-            <div class="movingSquare"></div>
-            <div class="movingSquare"></div>
         </header>
 
         <main>
