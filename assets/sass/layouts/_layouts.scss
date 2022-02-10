@@ -1,7 +1,25 @@
 header.home {
+  &::before {
+    content: url(../images/lemon-branch.svg);
+    position: absolute;
+    display: block;
+    width: 180px;
+    height: auto;
+    top: 0px;
+    left: -5px;
+    @include tablet {
+      width: 125px;
+    }
+  }
   background: $color-2;
   padding: 200px 0 120px;
   position: relative;
+  @include tablet {
+    padding: 85px 0 10px;
+  }
+  @include phone {
+    padding: 80px 0 0;
+  }
   & h1 {
     max-width: 860px;
     & span {
@@ -57,7 +75,7 @@ header.home {
 
       & li {
         transition: 0.5s linear;
-        @media (max-width: 1024px) {
+        @include tablet {
           text-align: center;
           transform: translateY(-300px);
         }
@@ -88,7 +106,7 @@ header.home {
         }
       }
     }
-    @media (max-width: 1024px) {
+    @include tablet {
       & input:checked ~ ul {
         height: 100%;
         & li {
@@ -177,45 +195,59 @@ header.home {
   }
 }
 
-.about {
-  background: #e0e0d8;
-  & .container {
-    display: flex;
-    width: 100%;
-    align-items: flex-start;
-    &-img-profile {
-      width: 30%;
-      max-width: 300px;
-      border-radius: 50%;
-      overflow: hidden;
-      margin-top: 1.5rem;
-
-      & img {
-        width: 100%;
-        display: block;
-      }
+section {
+  @include phone {
+    &:first-child {
+      padding-top: 50px;
     }
-    &-text {
-      &-link {
-        display: inline-block;
+  }
+  &.about {
+    background: #e0e0d8;
+    & .container {
+      display: flex;
+      width: 100%;
+      align-items: flex-start;
+      @include phone {
+        flex-direction: column;
       }
-      a {
-        transition: all 0.2s ease-in-out;
-        &.u-line::after {
-          content: "";
-          display: block;
-          height: 3px;
+      &-img-profile {
+        width: 30%;
+        max-width: 300px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-top: 1.5rem;
+        @include phone {
           width: 100%;
-          background: $color-3;
+          margin-top: 1rem;
         }
-        &:hover {
-          background: $color-3;
-          color: white;
+
+        & img {
+          width: 100%;
+          display: block;
         }
       }
-      & p a {
-        color: $color-3;
-        font-family: "Mada", sans-serif;
+      &-text {
+        &-link {
+          display: inline-block;
+        }
+        a {
+          transition: all 0.2s ease-in-out;
+          &.u-line::after {
+            content: "";
+            display: block;
+            height: 3px;
+            width: 100%;
+            background: $color-3;
+          }
+          &:hover {
+            background: $color-3;
+            color: white;
+          }
+        }
+        & p a {
+          color: $color-3;
+          font-family: "Mada", sans-serif;
+        }
       }
     }
   }
@@ -234,6 +266,12 @@ header.home {
   & .box-icon {
     width: 11.1%;
     text-align: center;
+    @include tablet {
+      width: 25%;
+    }
+    @include phone {
+      width: 50%;
+    }
     & p {
       color: #454545;
     }
@@ -243,6 +281,7 @@ header.home {
     }
     & img {
       height: 70px;
+      width: auto;
       & + p {
         margin-top: 13px;
       }
@@ -254,20 +293,38 @@ header.home {
   background: $color-6;
   & h3 {
     width: 45%;
+    @include phone {
+      width: 100%;
+    }
   }
   & .container {
     &-work {
       display: flex;
-      margin-bottom: 30px;
+      margin-bottom: 100px;
+      @include tablet {
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      @include phone {
+        flex-direction: column;
+        margin-bottom: 60px;
+      }
       &:nth-child(odd) .container-text {
         order: -1;
         padding-left: 0;
         padding-right: 5%;
+        @include phone {
+          order: 1;
+        }
       }
     }
     &-img {
       width: 55%;
       padding-top: 35px;
+      @include phone {
+        width: 100%;
+      }
       & img {
         width: 100%;
         border-radius: 10px;
@@ -275,6 +332,9 @@ header.home {
     }
     &-text {
       width: 45%;
+      @include phone {
+        width: 100%;
+      }
     }
     &-icons-mini {
       display: flex;
@@ -298,9 +358,15 @@ header.home {
     &-content {
       display: flex;
       justify-content: space-between;
+      @include tablet {
+        display: block;
+      }
     }
     &-form {
       width: 64%;
+      @include tablet {
+        width: 100%;
+      }
       & form {
         & label {
           pointer-events: none;
@@ -354,18 +420,35 @@ header.home {
     &-social {
       width: 35%;
       padding: 129px 0 0 45px;
+      @include tablet {
+        width: 100%;
+        padding: 40px 0 0 0;
+      }
       &-i {
         display: flex;
         justify-content: center;
+        @include tablet {
+          justify-content: flex-start;
+          max-width: 250px;
+        }
         & ul {
           display: flex;
           justify-content: space-around;
+          @include tablet {
+            justify-content: space-between;
+            max-width: 120px;
+            margin: 0;
+          }
           width: 50%;
+          padding-left: 25px;
           & li {
             transition: all 0.3s ease;
             & i {
               transition: all 0.3s ease;
               color: $color-3;
+              @include tablet {
+                font-size: 1.7rem;
+              }
             }
             &:hover {
               transform: scale(1.5);
