@@ -259,7 +259,7 @@ header.home::before {
   }
 }
 header.home h1 {
-  max-width: 860px;
+  max-width: 825px;
 }
 header.home h1 span {
   display: inline-block;
